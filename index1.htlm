@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanzamiento Student Club USIL-PMI 2026</title>
+    
+    <!-- Fuentes: Montserrat (Títulos modernos) e Inter (Lectura limpia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================================
+           VARIABLES Y RESET
+           ========================================================= */
+        :root {
+            --usil-blue: #0a2878;
+            --usil-dark: #051450;
+            --usil-light: #1e50b4;
+            --usil-gold: #f0c83c;
+            --usil-gold-light: #ffe066;
+            --usil-cyan: #00b4dc;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--usil-dark) 0%, var(--usil-blue) 50%, #0d1f5c 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fondo decorativo animado (Blobs) */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        .blob-1 { top: -10%; right: -10%; width: 500px; height: 500px; background: var(--usil-light); }
+        .blob-2 { bottom: -10%; left: -10%; width: 600px; height: 600px; background: var(--usil-cyan); animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 300px; height: 300px; background: var(--usil-gold); opacity: 0.15; animation-delay: -2s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        /* =========================================================
+           UTILIDADES Y GLASSMORPHISM
+           ========================================================= */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px; }
+        .text-gold { color: var(--usil-gold); }
+        .text-cyan { color: var(--usil-cyan); }
+        .center { text-align: center; }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--usil-gold);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           NAVEGACIÓN
+           ========================================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 20, 80, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 10px 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--usil-gold); }
+
+        /* =========================================================
+           HERO (PORTADA)
+           ========================================================= */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-logo {
+            background: rgba(255,255,255,0.95);
+            padding: 20px 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hero-logo img { height: 80px; width: auto; }
+
+        header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        header h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--usil-gold);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--usil-gold);
+            margin: 0 auto 40px;
+            border-radius: 2px;
+        }
+
+        /* =========================================================
+           INFO DEL EVENTO
+           ========================================================= */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .info-card {
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--usil-gold);
+        }
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--usil-gold);
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 8px rgba(240, 200, 60, 0.4));
+        }
+        .info-date { font-size: 3.5rem; font-weight: 900; color: white; line-height: 1; }
+        .info-month { font-size: 1.2rem; color: var(--usil-cyan); font-weight: 600; text-transform: uppercase; }
+        .info-text { font-size: 1.1rem; font-weight: 600; margin-top: 5px; }
+        .info-sub { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+
+        /* =========================================================
+           PROGRAMA (Timeline Style)
+           ========================================================= */
+        #programa { padding: 80px 0; }
+        
+        .schedule-item {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .schedule-item:hover { transform: scale(1.01); }
+
+        .time-col {
+            width: 25%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-align: center;
+            background: rgba(90, 110, 240, 0.3);
+            border-right: 1px solid var(--glass-border);
+        }
+        .time-col i { font-size: 1.5rem; margin-bottom: 8px; color: var(--usil-gold); }
+
+        .desc-col {
+            width: 75%;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .desc-col h4 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .speaker-highlight {
+            color: var(--usil-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .speaker-role {
+            color: var(--usil-cyan);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .desc-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+
+        /* Variación para bloques "blancos" del LaTeX original */
+        .schedule-item.light-mode .time-col {
+            background: white;
+            color: var(--usil-blue);
+            border-right: none;
+        }
+        .schedule-item.light-mode .time-col i { color: var(--usil-blue); }
+        .schedule-item.light-mode .desc-col {
+            background: white;
+            color: var(--usil-dark);
+        }
+        .schedule-item.light-mode .desc-col h4 { color: var(--usil-dark); }
+        .schedule-item.light-mode .desc-text { color: #444; }
+
+        /* =========================================================
+           PONENTES (Efecto Cutout / Profundidad)
+           ========================================================= */
+        #ponentes { padding: 80px 0; }
+
+        .bio-card {
+            display: flex;
+            margin-bottom: 40px;
+            padding: 0;
+            overflow: visible;
+            position: relative;
+        }
+        
+        .bio-photo-wrapper {
+            width: 35%;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+        }
+        /* Forma orgánica detrás de la foto */
+        .bio-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 90%;
+            background: linear-gradient(135deg, var(--usil-cyan), var(--usil-light));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: 0;
+            opacity: 0.6;
+            top: 10%;
+        }
+
+        .bio-photo {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+        .bio-card:hover .bio-photo { transform: translateY(-10px) scale(1.02); }
+        
+        .bio-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); 
+        }
+
+        .bio-info {
+            width: 65%;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .bio-name {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+        .bio-title {
+            font-size: 1rem;
+            color: var(--usil-gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .bio-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            text-align: justify;
+            border-left: 3px solid var(--usil-cyan);
+            padding-left: 15px;
+        }
+
+        /* =========================================================
+           ORGANIGRAMA
+           ========================================================= */
+        #equipo { padding: 80px 0 120px; }
+        .org-chart-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .org-chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* =========================================================
+           FOOTER & CTA FLOTANTE
+           ========================================================= */
+        footer {
+            background: rgba(0,0,0,0.3);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--usil-gold);
+            color: var(--usil-dark);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(240, 200, 60, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .sticky-cta:hover {
+            transform: scale(1.05);
+            background: var(--usil-gold-light);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(240, 200, 60, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(240, 200, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(240, 200, 60, 0); }
+        }
+
+        /* =========================================================
+           RESPONSIVE
+           ========================================================= */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .schedule-item { flex-direction: column; }
+            .time-col { width: 100%; padding: 15px; flex-direction: row; gap: 10px; border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .desc-col { width: 100%; padding: 20px; }
+            
+            .bio-card { flex-direction: column; }
+            .bio-photo-wrapper { width: 100%; padding-bottom: 0; }
+            .bio-photo-wrapper::before { width: 60%; height: 50%; top: 20%; }
+            .bio-info { width: 100%; padding: 20px; text-align: center; }
+            .bio-text { text-align: left; }
+            
+            .sticky-cta { bottom: 20px; right: 20px; left: 20px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondos decorativos animados -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <img src="Logo PMI Student CLub.jpeg" alt="PMI USIL Student Club" onerror="this.src='https://via.placeholder.com/200x50/ffffff/0a2878?text=LOGO+PMI+USIL'">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#ponentes">Ponentes</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Portada -->
+    <header id="inicio">
+        <div class="hero-logo">
+            <img src="Logo PMI Student CLub.jpeg" alt="PMI USIL Student Club" onerror="this.src='https://via.placeholder.com/300x80/ffffff/0a2878?text=LOGO+PMI+USIL'">
+        </div>
+        <h1>¡Llegó el Momento!</h1>
+        <h2>Student Club USIL-PMI</h2>
+        <p class="hero-tagline">Únete a la comunidad de líderes en gestión de proyectos más grande del Perú. Conecta, aprende y transforma tu carrera profesional.</p>
+        <div class="divider"></div>
+
+        <div class="container" style="width: 100%;">
+            <div class="info-grid">
+                <div class="glass info-card">
+                    <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+                    <div class="info-date">14</div>
+                    <div class="info-month">Octubre 2026</div>
+                    <div class="info-sub">Miércoles</div>
+                </div>
+                <div class="glass info-card">
+                    <div class="info-icon"><i class="far fa-clock"></i></div>
+                    <div class="info-text">3:00 p.m. a 7:00 p.m.</div>
+                    <div class="info-sub">4 horas de networking</div>
+                </div>
+                <div class="glass info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">Aula Magna</div>
+                    <div class="info-sub">Universidad San Ignacio de Loyola</div>
+                </div>
+            </div>
+
+            <a href="https://forms.cloud.microsoft/r/ayb7rnJMEa" class="sticky-cta" style="position: relative; bottom: auto; right: auto; animation: none; display: inline-flex; margin-top: 20px;">
+                <i class="fas fa-rocket"></i> ¡Reserva tu Cupo Gratis!
+            </a>
+        </div>
+    </header>
+
+    <!-- Programa -->
+    <section id="programa">
+        <div class="container">
+            <h2 class="section-title">Agenda del Día</h2>
+            <p class="section-subtitle">Una tarde diseñada para impulsar tu futuro</p>
+
+            <div class="schedule-item glass">
+                <div class="time-col">
+                    <i class="fas fa-user-check"></i>
+                    15:00 – 15:30 h
+                </div>
+                <div class="desc-col">
+                    <h4>Registro y Bienvenida</h4>
+                    <p class="desc-text">Acredítate, recibe tu material y conecta con otros estudiantes antes de comenzar.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass light-mode">
+                <div class="time-col">
+                    <i class="fas fa-flag"></i>
+                    15:30 – 16:30 h
+                </div>
+                <div class="desc-col">
+                    <h4>Ceremonia de Inauguración</h4>
+                    <p class="desc-text">Descubre la visión del Student Club de la mano de autoridades USIL y líderes del PMI Lima Chapter.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass">
+                <div class="time-col">
+                    <i class="fas fa-users"></i>
+                    16:30 – 16:45 h
+                </div>
+                <div class="desc-col">
+                    <span class="speaker-highlight">Vanessa Ramirez Rojas</span>
+                    <span class="speaker-role">Líder de Innovación Académica en Red PMI de Educación</span>
+                    <p class="desc-text"><strong>Dinámica de Networking:</strong> "Objeto de Valor" - Rompe el hielo y conecta con profesionales del sector.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass light-mode">
+                <div class="time-col">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    16:45 – 17:15 h
+                </div>
+                <div class="desc-col">
+                    <span class="speaker-highlight">Leonard Panta</span>
+                    <span class="speaker-role">Past President ProyectaUNI</span>
+                    <p class="desc-text"><strong>Charla:</strong> Comunidades Globales de Project Management - Cómo un Student Club puede catapultar tu carrera joven.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass light-mode">
+                <div class="time-col">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    17:15 – 17:45 h
+                </div>
+                <div class="desc-col">
+                    <span class="speaker-highlight">Aurio De la Cruz</span>
+                    <span class="speaker-role">Sustainability Champion - PMI Latam</span>
+                    <p class="desc-text"><strong>Charla:</strong> Desarrollo Profesional con el PMI - Tu ruta hacia certificaciones internacionales.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass">
+                <div class="time-col">
+                    <i class="fas fa-certificate"></i>
+                    17:45 – 18:00 h
+                </div>
+                <div class="desc-col">
+                    <h4>Reconocimientos y Sorpresas</h4>
+                    <p class="desc-text">Entrega de certificados y anuncios exclusivos para los asistentes.</p>
+                </div>
+            </div>
+
+            <div class="schedule-item glass light-mode">
+                <div class="time-col">
+                    <i class="fas fa-lightbulb"></i>
+                    18:00 – 19:00 h
+                </div>
+                <div class="desc-col">
+                    <span class="speaker-highlight">Rocio de la Cuadra</span>
+                    <span class="speaker-role">Past President PMI Lima Chapter 2023</span>
+                    <p class="desc-text"><strong>Taller Práctico:</strong> Liderazgo en la Dirección de Proyectos - Habilidades que marcan la diferencia.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Ponentes -->
+    <section id="ponentes">
+        <div class="container">
+            <h2 class="section-title">Conoce a tus Mentores</h2>
+            <p class="section-subtitle">Profesionales que transformarán tu perspectiva</p>
+
+            <!-- Rocio -->
+            <div class="glass bio-card">
+                <div class="bio-photo-wrapper">
+                    <div class="bio-photo">
+                        <img src="Rocio.foto.jpeg" alt="Rocio De La Cuadra" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'">
+                    </div>
+                </div>
+                <div class="bio-info">
+                    <h3 class="bio-name">Rocio De La Cuadra Vigil</h3>
+                    <p class="bio-title">Economista, MBA, PMP® DASSM®, Coach ontológico<br>Past President PMI Lima Peru Chapter | PMO New Products Yanbal</p>
+                    <p class="bio-text">Líder transnacional que ha dirigido equipos de innovación en múltiples países. Su pasión es despertar el potencial humano a través del coaching ontológico. Aprenderás cómo el liderazgo consciente transforma proyectos y personas.</p>
+                </div>
+            </div>
+
+            <!-- Aurio -->
+            <div class="glass bio-card">
+                <div class="bio-photo-wrapper">
+                    <div class="bio-photo">
+                        <img src="Aurio.foto.jpeg" alt="Aurio de la Cruz" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'">
+                    </div>
+                </div>
+                <div class="bio-info">
+                    <h3 class="bio-name">Aurio de la Cruz</h3>
+                    <p class="bio-title">Ingeniero Industrial, MBA, PMP®, CSP SM, GPM-b<br>Sustainability Champion de PMI Latinoamérica | Jefe de PMO Laboratorios Biomont</p>
+                    <p class="bio-text">Pionero en integrar sostenibilidad con gestión de proyectos en Latinoamérica. Te mostrará cómo las certificaciones PMI pueden abrirte puertas en empresas globales y proyectos con impacto social real.</p>
+                </div>
+            </div>
+
+            <!-- Leonard -->
+            <div class="glass bio-card">
+                <div class="bio-photo-wrapper">
+                    <div class="bio-photo">
+                        <img src="Leonard.foto.png" alt="Leonard Panta" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'">
+                    </div>
+                </div>
+                <div class="bio-info">
+                    <h3 class="bio-name">Leonard Panta</h3>
+                    <p class="bio-title">Ingeniero Industrial, PMP®<br>Past President ProyectaUNI | Consultor PMO y Gestión de Proyectos</p>
+                    <p class="bio-text">De estudiante a líder comunitario del PMI. Te compartirá su experiencia construyendo redes profesionales desde la universidad y cómo la IA y las nuevas tecnologías están revolucionando la gestión de proyectos.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Organigrama -->
+    <section id="equipo">
+        <div class="container">
+            <h2 class="section-title">El Equipo Detrás del Club</h2>
+            <p class="section-subtitle">Estudiantes comprometidos con tu desarrollo profesional</p>
+            
+            <div class="glass org-chart-container">
+                <img src="EquipoSCUSIL.jpeg" alt="Equipo PMI USIL Student Club" onerror="this.src='https://via.placeholder.com/800x600/1e50b4/ffffff?text=EQUIPO+STUDENT+CL+USIL'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>PMI USIL Student Club</strong> - Donde nacen los líderes en gestión de proyectos</p>
+            <p style="margin-top: 5px; color: var(--usil-gold);">14 de Octubre del 2026 | Universidad San Ignacio de Loyola</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante (Sticky CTA) -->
+    <a href="https://forms.cloud.microsoft/r/ayb7rnJMEa" class="sticky-cta" target="_blank">
+        <i class="fas fa-calendar-check"></i> ¡Inscríbete Ahora!
+    </a>
+
+</body>
+</html>
