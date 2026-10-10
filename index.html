@@ -12,20 +12,20 @@
     
     <!-- Open Graph / WhatsApp / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI"> <!-- REEMPLAZAR CON LA URL REAL DE TU WEB -->
+    <meta property="og:url" content="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI">
     <meta property="og:title" content="Lanzamiento Oficial Student Club USIL-PMI 2026">
     <meta property="og:description" content="Únete al Lanzamiento Oficial del Student Club USIL-PMI. Conecta, aprende y transforma tu carrera profesional con expertos en gestión de proyectos.">
-    <meta property="og:image" content="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Flayer.evento.jpeg"> <!-- REEMPLAZAR CON LA URL REAL DE LA IMAGEN -->
+    <meta property="og:image" content="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Flayer.evento.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://tudominio.com/"> <!-- REEMPLAZAR CON LA URL REAL DE TU WEB -->
+    <meta property="twitter:url" content="https://tudominio.com/">
     <meta property="twitter:title" content="Lanzamiento Oficial Student Club USIL-PMI 2026">
     <meta property="twitter:description" content="Únete al Lanzamiento Oficial del Student Club USIL-PMI. Conecta, aprende y transforma tu carrera profesional con expertos en gestión de proyectos.">
-    <meta property="twitter:image" content="http://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Flayer.evento.jpeg"> <!-- REEMPLAZAR CON LA URL REAL DE LA IMAGEN -->
+    <meta property="twitter:image" content="http://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Flayer.evento.jpeg">
     
     <!-- Fuentes: Montserrat (Títulos modernos) e Inter (Lectura limpia) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,6 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
         html { scroll-behavior: smooth; }
         
         body {
@@ -119,7 +118,6 @@
             font-weight: 600;
         }
 
-        /* Título específico para la sección de beneficios */
         .benefits-title {
             text-align: center;
             color: var(--usil-gold);
@@ -184,14 +182,13 @@
             background: rgba(240, 200, 60, 0.1);
         }
         
-        /* Menú hamburguesa para móvil - CORREGIDO */
         .menu-toggle {
-            display: none; /* Por defecto oculto en desktop */
+            display: none;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
             padding: 8px;
-            z-index: 1001; /* Asegurar que esté por encima */
+            z-index: 1001;
             background: transparent;
             border: none;
         }
@@ -203,15 +200,9 @@
             transition: all 0.3s;
             display: block;
         }
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
         /* =========================================================
            HERO (PORTADA)
@@ -275,12 +266,9 @@
         .info-sub { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
 
         /* =========================================================
-           BENEFICIOS - UNA SOLA LÍNEA INTERACTIVA
+           BENEFICIOS
            ========================================================= */
-        .benefits-section {
-            margin-bottom: 60px;
-        }
-        
+        .benefits-section { margin-bottom: 60px; }
         .benefits-container {
             background: linear-gradient(135deg, rgba(10, 40, 120, 0.95) 0%, rgba(30, 80, 180, 0.95) 100%);
             border: 2px solid rgba(255, 255, 255, 0.2);
@@ -289,7 +277,6 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
         }
-
         .benefits-row {
             display: flex;
             justify-content: space-between;
@@ -297,7 +284,6 @@
             gap: 20px;
             position: relative;
         }
-
         .benefit-card {
             flex: 1;
             text-align: center;
@@ -311,7 +297,6 @@
             overflow: hidden;
             min-width: 0;
         }
-
         .benefit-card::before {
             content: '';
             position: absolute;
@@ -322,20 +307,14 @@
             background: linear-gradient(90deg, transparent, rgba(240, 200, 60, 0.2), transparent);
             transition: left 0.6s;
         }
-
-        .benefit-card:hover::before {
-            left: 100%;
-        }
-
+        .benefit-card:hover::before { left: 100%; }
         .benefit-card:hover {
             transform: translateY(-12px) scale(1.05);
             background: rgba(255, 255, 255, 0.15);
             border-color: var(--usil-gold);
-            box-shadow: 0 20px 40px rgba(240, 200, 60, 0.3), 
-                        0 0 20px rgba(240, 200, 60, 0.2);
+            box-shadow: 0 20px 40px rgba(240, 200, 60, 0.3), 0 0 20px rgba(240, 200, 60, 0.2);
             z-index: 10;
         }
-
         .benefit-icon {
             font-size: 3.5rem;
             color: var(--usil-gold);
@@ -344,20 +323,12 @@
             transition: all 0.3s ease;
             filter: drop-shadow(0 0 10px rgba(240, 200, 60, 0.3));
         }
-
         .benefit-card:hover .benefit-icon {
             transform: scale(1.2) rotate(5deg);
             filter: drop-shadow(0 0 20px rgba(240, 200, 60, 0.8));
         }
+        .benefit-text { font-size: 1.05rem; font-weight: 600; color: white; line-height: 1.4; }
 
-        .benefit-text {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: white;
-            line-height: 1.4;
-        }
-
-        /* Líneas divisorias verticales animadas */
         .benefit-divider {
             width: 2px;
             height: 80px;
@@ -366,7 +337,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .benefit-divider::after {
             content: '';
             position: absolute;
@@ -377,7 +347,6 @@
             background: linear-gradient(to bottom, transparent, var(--usil-gold), transparent);
             animation: shine 3s infinite;
         }
-
         @keyframes shine {
             0% { top: -100%; }
             100% { top: 100%; }
@@ -387,7 +356,6 @@
            PROGRAMA (Timeline Style)
            ========================================================= */
         #programa { padding: 80px 0; }
-        
         .schedule-item {
             display: flex;
             margin-bottom: 20px;
@@ -396,7 +364,6 @@
             transition: transform 0.3s ease;
         }
         .schedule-item:hover { transform: scale(1.01); }
-
         .time-col {
             width: 25%;
             padding: 25px;
@@ -411,52 +378,22 @@
             border-right: 1px solid var(--glass-border);
         }
         .time-col i { font-size: 1.5rem; margin-bottom: 8px; color: var(--usil-gold); }
-
-        .desc-col {
-            width: 75%;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-        }
-        .desc-col h4 {
-            font-size: 1.2rem;
-            color: white;
-            margin-bottom: 8px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .speaker-highlight {
-            color: var(--usil-gold);
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .speaker-role {
-            color: var(--usil-cyan);
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .desc-col { width: 75%; padding: 25px; background: rgba(255, 255, 255, 0.03); }
+        .desc-col h4 { font-size: 1.2rem; color: white; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; }
+        .speaker-highlight { color: var(--usil-gold); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 4px; }
+        .speaker-role { color: var(--usil-cyan); font-style: italic; font-size: 0.95rem; margin-bottom: 10px; display: block; }
         .desc-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
 
-        .schedule-item.light-mode .time-col {
-            background: white;
-            color: var(--usil-blue);
-            border-right: none;
-        }
+        .schedule-item.light-mode .time-col { background: white; color: var(--usil-blue); border-right: none; }
         .schedule-item.light-mode .time-col i { color: var(--usil-blue); }
-        .schedule-item.light-mode .desc-col {
-            background: white;
-            color: var(--usil-dark);
-        }
+        .schedule-item.light-mode .desc-col { background: white; color: var(--usil-dark); }
         .schedule-item.light-mode .desc-col h4 { color: var(--usil-dark); }
         .schedule-item.light-mode .desc-text { color: #444; }
 
         /* =========================================================
-           PONENTES (Efecto Cutout / Profundidad)
+           PONENTES
            ========================================================= */
         #ponentes { padding: 80px 0; }
-
         .bio-card {
             display: flex;
             margin-bottom: 40px;
@@ -464,7 +401,6 @@
             overflow: visible;
             position: relative;
         }
-        
         .bio-photo-wrapper {
             width: 35%;
             position: relative;
@@ -484,7 +420,6 @@
             opacity: 0.6;
             top: 10%;
         }
-
         .bio-photo {
             position: relative;
             z-index: 1;
@@ -496,66 +431,25 @@
             transition: transform 0.4s ease;
         }
         .bio-card:hover .bio-photo { transform: translateY(-10px) scale(1.02); }
-        
-        .bio-photo img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); 
-        }
-
-        .bio-info {
-            width: 65%;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .bio-name {
-            font-size: 1.8rem;
-            color: white;
-            margin-bottom: 5px;
-        }
-        .bio-title {
-            font-size: 1rem;
-            color: var(--usil-gold);
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-        .bio-text {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.85);
-            text-align: justify;
-            border-left: 3px solid var(--usil-cyan);
-            padding-left: 15px;
-        }
+        .bio-photo img { width: 100%; height: auto; display: block; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3)); }
+        .bio-info { width: 65%; padding: 40px 30px; display: flex; flex-direction: column; justify-content: center; }
+        .bio-name { font-size: 1.8rem; color: white; margin-bottom: 5px; }
+        .bio-title { font-size: 1rem; color: var(--usil-gold); font-weight: 600; margin-bottom: 20px; line-height: 1.4; }
+        .bio-text { font-size: 0.95rem; color: rgba(255,255,255,0.85); text-align: justify; border-left: 3px solid var(--usil-cyan); padding-left: 15px; }
 
         /* =========================================================
-           ORGANIGRAMA
+           ORGANIGRAMA Y VIDEO
            ========================================================= */
         #equipo { padding: 80px 0 120px; }
-        .org-chart-container {
-            padding: 20px;
-            text-align: center;
-        }
-        .org-chart-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+        .org-chart-container { padding: 20px; text-align: center; }
+        .org-chart-container img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
-        /* =========================================================
-           VIDEO SECTION
-           ========================================================= */
         .video-section {
             padding: 60px 20px;
             text-align: center;
             background: linear-gradient(135deg, rgba(10, 40, 120, 0.8) 0%, rgba(30, 80, 180, 0.8) 100%);
             margin-bottom: 40px;
         }
-        
         .video-container {
             max-width: 800px;
             margin: 0 auto;
@@ -564,12 +458,7 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             border: 3px solid var(--usil-gold);
         }
-        
-        .video-container video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .video-container video { width: 100%; height: auto; display: block; }
 
         /* =========================================================
            FOOTER & CTA FLOTANTE
@@ -582,7 +471,6 @@
             color: rgba(255,255,255,0.6);
             border-top: 1px solid var(--glass-border);
         }
-
         .sticky-cta {
             position: fixed;
             bottom: 30px;
@@ -601,11 +489,7 @@
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
         }
-        .sticky-cta:hover {
-            transform: scale(1.05);
-            background: var(--usil-gold-light);
-        }
-
+        .sticky-cta:hover { transform: scale(1.05); background: var(--usil-gold-light); }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(240, 200, 60, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(240, 200, 60, 0); }
@@ -613,15 +497,13 @@
         }
 
         /* =========================================================
-           RESPONSIVE - CORREGIDO
+           RESPONSIVE
            ========================================================= */
         @media (max-width: 968px) {
-            .menu-toggle {
-                display: flex; /* Mostrar menú hamburguesa en móvil */
-            }
+            .menu-toggle { display: flex; }
             .nav-links {
                 position: fixed;
-                top: 65px; /* Ajustado para que no quede pegado */
+                top: 65px;
                 left: 0;
                 right: 0;
                 background: rgba(5, 20, 80, 0.98);
@@ -634,14 +516,8 @@
                 z-index: 999;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             }
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            .nav-links a {
-                padding: 12px;
-                text-align: center;
-                font-size: 1.1rem;
-            }
+            .nav-links.active { transform: translateY(0); }
+            .nav-links a { padding: 12px; text-align: center; font-size: 1.1rem; }
             
             .schedule-item { flex-direction: column; }
             .time-col { width: 100%; padding: 15px; flex-direction: row; gap: 10px; border-right: none; border-bottom: 1px solid var(--glass-border); }
@@ -655,48 +531,20 @@
             
             .sticky-cta { bottom: 20px; right: 20px; left: 20px; justify-content: center; }
             
-            /* En tablets y móviles, los beneficios se apilan */
-            .benefits-row {
-                flex-direction: column;
-            }
-            .benefit-divider {
-                width: 80px;
-                height: 2px;
-                margin: 10px auto;
-            }
-            .benefit-divider::after {
-                animation: shine-horizontal 3s infinite;
-            }
-            @keyframes shine-horizontal {
-                0% { left: -100%; }
-                100% { left: 100%; }
-            }
+            .benefits-row { flex-direction: column; }
+            .benefit-divider { width: 80px; height: 2px; margin: 10px auto; }
+            .benefit-divider::after { animation: shine-horizontal 3s infinite; }
+            @keyframes shine-horizontal { 0% { left: -100%; } 100% { left: 100%; } }
         }
 
         @media (max-width: 640px) {
-            .benefits-container {
-                padding: 30px 20px;
-            }
-            .benefit-card {
-                padding: 25px 15px;
-            }
-            .benefit-icon {
-                font-size: 2.5rem;
-            }
-            .benefit-text {
-                font-size: 0.95rem;
-            }
-            
-            .nav-logo img {
-                height: 40px;
-            }
-            .nav-logo-text {
-                font-size: 0.65rem;
-            }
-            
-            .benefits-title {
-                font-size: 1.2rem;
-            }
+            .benefits-container { padding: 30px 20px; }
+            .benefit-card { padding: 25px 15px; }
+            .benefit-icon { font-size: 2.5rem; }
+            .benefit-text { font-size: 0.95rem; }
+            .nav-logo img { height: 40px; }
+            .nav-logo-text { font-size: 0.65rem; }
+            .benefits-title { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -715,7 +563,6 @@
                 <span class="nav-logo-text">Universidad San Ignacio de Loyola</span>
             </a>
             
-            <!-- Menú hamburguesa - CORREGIDO -->
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú de navegación">
                 <span></span>
                 <span></span>
@@ -757,7 +604,6 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN DE BENEFICIOS - UNA SOLA LÍNEA -->
             <div class="benefits-section">
                 <h3 class="benefits-title">Beneficios Exclusivos</h3>
                 <div class="benefits-container">
@@ -798,10 +644,7 @@
             <p class="section-subtitle">Lanzamiento Oficial Presencial</p>
 
             <div class="schedule-item glass">
-                <div class="time-col">
-                    <i class="fas fa-user-check"></i>
-                    15:00 – 15:30 h
-                </div>
+                <div class="time-col"><i class="fas fa-user-check"></i>15:00 – 15:30 h</div>
                 <div class="desc-col">
                     <h4>Inscripciones y Registro</h4>
                     <p class="desc-text">Recepción, entrega de materiales y registro de los participantes.</p>
@@ -809,10 +652,7 @@
             </div>
 
             <div class="schedule-item glass light-mode">
-                <div class="time-col">
-                    <i class="fas fa-flag"></i>
-                    15:30 – 16:30 h
-                </div>
+                <div class="time-col"><i class="fas fa-flag"></i>15:30 – 16:30 h</div>
                 <div class="desc-col">
                     <h4>Protocolo de Bienvenida e Inauguración Oficial</h4>
                     <p class="desc-text">Palabras de Autoridades USIL, Mentor del Club, Autoridades del PMI Lima Chapter y Líder del PMI USIL Student Club.</p>
@@ -820,10 +660,7 @@
             </div>
 
             <div class="schedule-item glass">
-                <div class="time-col">
-                    <i class="fas fa-users"></i>
-                    16:30 – 16:45 h
-                </div>
+                <div class="time-col"><i class="fas fa-users"></i>16:30 – 16:45 h</div>
                 <div class="desc-col">
                     <span class="speaker-highlight">Vanessa Ramirez Rojas</span>
                     <span class="speaker-role">Líder de Innovación Académica en Red PMI de Educación</span>
@@ -832,10 +669,7 @@
             </div>
 
             <div class="schedule-item glass light-mode">
-                <div class="time-col">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    16:45 – 17:15 h
-                </div>
+                <div class="time-col"><i class="fas fa-chalkboard-teacher"></i>16:45 – 17:15 h</div>
                 <div class="desc-col">
                     <span class="speaker-highlight">Leonard Panta</span>
                     <span class="speaker-role">Past President ProyectaUNI</span>
@@ -844,10 +678,7 @@
             </div>
 
             <div class="schedule-item glass light-mode">
-                <div class="time-col">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    17:15 – 17:45 h
-                </div>
+                <div class="time-col"><i class="fas fa-chalkboard-teacher"></i>17:15 – 17:45 h</div>
                 <div class="desc-col">
                     <span class="speaker-highlight">Aurio De la Cruz</span>
                     <span class="speaker-role">Sustainability Champion - PMI Latam</span>
@@ -856,10 +687,7 @@
             </div>
 
             <div class="schedule-item glass">
-                <div class="time-col">
-                    <i class="fas fa-certificate"></i>
-                    17:45 – 18:00 h
-                </div>
+                <div class="time-col"><i class="fas fa-certificate"></i>17:45 – 18:00 h</div>
                 <div class="desc-col">
                     <h4>Dinámica Certificate</h4>
                     <p class="desc-text">Actividad interactiva y entrega de reconocimientos.</p>
@@ -867,17 +695,13 @@
             </div>
 
             <div class="schedule-item glass light-mode">
-                <div class="time-col">
-                    <i class="fas fa-lightbulb"></i>
-                    18:00 – 19:00 h
-                </div>
+                <div class="time-col"><i class="fas fa-lightbulb"></i>18:00 – 19:00 h</div>
                 <div class="desc-col">
                     <span class="speaker-highlight">Rocio de la Cuadra</span>
                     <span class="speaker-role">Past President PMI Lima Chapter 2023</span>
                     <p class="desc-text"><strong>Taller:</strong> Liderazgo en la Dirección de Proyectos.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -925,7 +749,6 @@
                     <p class="bio-text">Experto en gestión de proyectos, PMO y transformación digital. Líder comunitario del PMI y expresidente de Student Club. Actualmente impulsa la innovación mediante la aplicación de buenas prácticas, nuevas tecnologías e inteligencia artificial en la efectiva gestión de proyectos.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -934,24 +757,27 @@
         <div class="container">
             <h2 class="section-title">Nuestro Equipo</h2>
             <p class="section-subtitle">Organigrama PMI USIL Student Club 2026</p>
-            
             <div class="glass org-chart-container">
                 <img src="EquipoSCUSIL.jpeg" alt="Organigrama del Equipo" onerror="this.src='https://via.placeholder.com/800x600/1e50b4/ffffff?text=IMAGEN+DEL+ORGANIGRAMA+EQUIPO+SC'">
             </div>
         </div>
     </section>
 
-    <!-- VIDEO SECTION - AGREGADO -->
+    <!-- VIDEO SECTION - CORREGIDO (Sin autoplay, con controles y límite de 3 repeticiones) -->
     <section class="video-section">
         <div class="container">
             <h2 class="section-title">¡Mira Nuestro Video!</h2>
             <p class="section-subtitle">Conoce más sobre el Student Club</p>
             <div class="video-container">
-                <video autoplay loop playsinline poster="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Nacho.SC.png" id="nachoVideo">
+                <!-- Se eliminó 'autoplay' y 'loop'. Se agregó 'controls' para que el usuario inicie la reproducción -->
+                <video controls playsinline poster="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Nacho.SC.png" id="nachoVideo">
                     <source src="Nacho.SC.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de video.
                 </video>
             </div>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.6);">
+                <i class="fas fa-info-circle"></i> El video se reproducirá 3 veces al darle play.
+            </p>
         </div>
     </section>
 
@@ -976,20 +802,31 @@
             menuToggle.classList.toggle('active');
         }
 
-        // Autoplay del video cuando es visible
+        // =========================================================
+        // LÓGICA DEL VIDEO: 3 REPRODUCCIONES AL DAR PLAY
+        // =========================================================
         const video = document.getElementById('nachoVideo');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    video.play().catch(error => {
-                        console.log('Autoplay bloqueado por el navegador:', error);
-                        video.controls = true; // Mostrar controles si falla
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
+        let playCount = 0;
+        const maxPlays = 3;
 
-        observer.observe(video);
+        // Escuchar cuando el video llega al final
+        video.addEventListener('ended', function() {
+            playCount++;
+            if (playCount < maxPlays) {
+                video.currentTime = 0; // Reiniciar al principio
+                video.play();          // Reproducir de nuevo
+            } else {
+                console.log('El video ha completado sus 3 repeticiones.');
+                // Opcional: podrías mostrar un mensaje o deshabilitar controles aquí si lo deseas
+            }
+        });
+
+        // Reiniciar el contador si el usuario vuelve a dar play manualmente desde el inicio
+        video.addEventListener('play', function() {
+            if (video.currentTime < 1) { // Si está al inicio del video
+                playCount = 0;
+            }
+        });
     </script>
 
 </body>
