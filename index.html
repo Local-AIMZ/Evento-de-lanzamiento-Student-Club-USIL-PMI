@@ -162,13 +162,16 @@
             background: rgba(240, 200, 60, 0.1);
         }
         
-        /* Menú hamburguesa para móvil */
+        /* Menú hamburguesa para móvil - CORREGIDO */
         .menu-toggle {
-            display: none;
+            display: none; /* Por defecto oculto en desktop */
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
-            padding: 5px;
+            padding: 8px;
+            z-index: 1001; /* Asegurar que esté por encima */
+            background: transparent;
+            border: none;
         }
         .menu-toggle span {
             width: 25px;
@@ -176,6 +179,7 @@
             background: white;
             border-radius: 3px;
             transition: all 0.3s;
+            display: block;
         }
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
@@ -562,15 +566,15 @@
         }
 
         /* =========================================================
-           RESPONSIVE
+           RESPONSIVE - CORREGIDO
            ========================================================= */
         @media (max-width: 968px) {
             .menu-toggle {
-                display: flex;
+                display: flex; /* Mostrar menú hamburguesa en móvil */
             }
             .nav-links {
                 position: fixed;
-                top: 60px;
+                top: 65px; /* Ajustado para que no quede pegado */
                 left: 0;
                 right: 0;
                 background: rgba(5, 20, 80, 0.98);
@@ -580,6 +584,8 @@
                 transform: translateY(-150%);
                 transition: transform 0.3s ease;
                 border-bottom: 2px solid var(--usil-gold);
+                z-index: 999;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             }
             .nav-links.active {
                 transform: translateY(0);
@@ -662,12 +668,12 @@
                 <span class="nav-logo-text">Universidad San Ignacio de Loyola</span>
             </a>
             
-            <!-- Menú hamburguesa -->
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <!-- Menú hamburguesa - CORREGIDO -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú de navegación">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
