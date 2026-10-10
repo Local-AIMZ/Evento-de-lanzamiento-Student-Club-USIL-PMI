@@ -547,6 +547,31 @@
         }
 
         /* =========================================================
+           VIDEO SECTION
+           ========================================================= */
+        .video-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 40, 120, 0.8) 0%, rgba(30, 80, 180, 0.8) 100%);
+            margin-bottom: 40px;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--usil-gold);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================================
            FOOTER & CTA FLOTANTE
            ========================================================= */
         footer {
@@ -916,6 +941,20 @@
         </div>
     </section>
 
+    <!-- VIDEO SECTION - AGREGADO -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">¡Mira Nuestro Video!</h2>
+            <p class="section-subtitle">Conoce más sobre el Student Club</p>
+            <div class="video-container">
+                <video autoplay loop playsinline poster="https://local-aimz.github.io/Evento-de-lanzamiento-Student-Club-USIL-PMI/Nacho.SC.png" id="nachoVideo">
+                    <source src="Nacho.SC.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -936,6 +975,21 @@
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
         }
+
+        // Autoplay del video cuando es visible
+        const video = document.getElementById('nachoVideo');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play().catch(error => {
+                        console.log('Autoplay bloqueado por el navegador:', error);
+                        video.controls = true; // Mostrar controles si falla
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(video);
     </script>
 
 </body>
